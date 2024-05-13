@@ -24,5 +24,5 @@ def get_post():
 @app.post("/createpost")
 def create_post(new_post: post):
     print(new_post)
-    return {"data": "new post"}
+    return {"data": "new post ok"}
 # title : str, content: str, category, Bool published
