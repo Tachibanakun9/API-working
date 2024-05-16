@@ -9,7 +9,8 @@ class post(BaseModel):
     title: str
     content: str
     published: bool = True
-
+    rating: optional[int] = None
+ 
 
 
 @app.get("/")
@@ -23,6 +24,7 @@ def get_post():
 
 @app.post("/createpost")
 def create_post(new_post: post):
-    print(new_post)
+    print(new_post.published)
+    print(new_post.rating)
     return {"data": "new post ok"}
 # title : str, content: str, category, Bool published
