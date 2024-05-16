@@ -37,6 +37,6 @@ def create_post(post: Post):
     post_dict = post.dict()
     post_dict['id'] = randrange(0, 1000000000)
     my_posts.append()
-    print(post.dict())
-    return {"data": post}
+    print(post.dict(post_dict))
+    return {"data": post_dict}
 # title : str, content: str, category, Bool published
