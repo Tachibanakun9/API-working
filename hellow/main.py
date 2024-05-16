@@ -3,6 +3,10 @@ from pydantic import BaseModel
 from fastapi.params import Body
 from typing import Optional
 from random import randrange
+
+
+
+
 app = FastAPI()
 
 
@@ -30,7 +34,9 @@ def create_post(post: Post):
     print(post.published)
     print(post.rating)
     # if ever you need to convert a schema to a python dictionary 
-    my_posts.append(post.dict())
+    post_dict = post.dict()
+    post_dict['id'] = randrange(0, 1000000000)
+    my_posts.append()
     print(post.dict())
-    return {"data": "new post ok", post}
+    return {"data": post}
 # title : str, content: str, category, Bool published
