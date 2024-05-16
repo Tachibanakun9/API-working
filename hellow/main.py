@@ -23,8 +23,10 @@ def get_post():
 
 
 @app.post("/createpost")
-def create_post(new_post: post):
-    print(new_post.published)
-    print(new_post.rating)
-    return {"data": "new post ok"}
+def create_post(post: post):
+    print(post.published)
+    print(post.rating)
+    # if ever you need to convert a schema to a python dictionary 
+    print(post.dict())
+    return {"data": "new post ok", post}
 # title : str, content: str, category, Bool published
